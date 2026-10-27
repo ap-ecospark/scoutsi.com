@@ -654,6 +654,15 @@ section {
   color: var(--tx);
   font-weight: 600;
 }
+/* drop the desktop stagger offsets so hero text stays on screen */
+@media (max-width: 880px) {
+  .hero-title .l1,
+  .hero-title .l3,
+  .hero-tag,
+  .hero-sub {
+    left: 0;
+  }
+}
 
 .hero-actions {
   display: flex;
@@ -1143,6 +1152,13 @@ section {
 }
 .trust-item:hover {
   color: var(--green);
+}
+
+/* no negative pull once the strip no longer has desktop width */
+@media (max-width: 880px) {
+  .trust-side--right .trust-items {
+    margin-right: 0;
+  }
 }
 
 /* stack the two sides on narrow screens instead of colliding */
@@ -2387,6 +2403,10 @@ footer {
   .impact-cta {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1.5rem 1.25rem;
+  }
+  .impact-cta .btn {
+    max-width: 100%;
   }
 }
 
@@ -2622,6 +2642,13 @@ footer {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  .contact-grid > * {
+    min-width: 0; /* let the column shrink below its longest line */
+  }
+  .contact-meta-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
 }
 .contact-info h3 {
   font-size: 1.4rem;
@@ -2800,6 +2827,28 @@ footer {
   }
 }
 @media (max-width: 540px) {
+  nav {
+    padding: 0 1rem;
+  }
+  .nav-in {
+    gap: 0.75rem;
+  }
+  .nav-logo {
+    font-size: 1.15rem;
+    gap: 0.5rem;
+  }
+  .nav-logo .logo-mark,
+  .nav-logo .logo-mark img {
+    width: 32px;
+    height: 32px;
+  }
+  .nav-cta {
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.04em;
+  }
+  .contact-meta-label {
+    width: 80px;
+  }
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
