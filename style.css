@@ -629,6 +629,17 @@ section {
   white-space: nowrap;
 }
 
+.hero-tag {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--tx);
+  margin: -0.8rem 0 1rem;
+  animation: fadeUp 0.8s 0.3s both;
+  position: relative;
+  left: 2rem;
+}
+
 .hero-sub {
   font-size: 0.93rem;
   line-height: 1.62;
